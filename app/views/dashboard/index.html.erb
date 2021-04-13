@@ -1,0 +1,43 @@
+<%= render 'navbar' %>
+<%# jumbotron %>
+<div>
+    <img src="" alt="imagen de portada">
+    <div>temperatura</div>
+    <div>hora</div>
+</div>
+<%# perfil %>
+<div>
+    <% if current_user.profile.type == 'director' %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre: <%= @executive.profile.names %> <%= @executive.profile.last_names %></li>
+            <li class="list-group-item">Rut: <%= @executive.profile.rut %></li>
+            <li class="list-group-item">Nacionalidad: <%= @executive.profile.nationality %></li>
+            <li class="list-group-item">Sexo: <%= @executive.profile.sex %></li>
+            <li class="list-group-item">Fecha de nacimiento: <%= @executive.profile.date_of_birth %></li>
+            <li class="list-group-item">Direccion: <%= @executive.profile.address %></li>
+            <li class="list-group-item">Telefono: <%= @executive.profile.phone %></li>
+        </ul>
+    <% end %>
+    <% if current_user.profile.type == 'educadora' %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre: <%= @educator.profile.names %> <%= @educator.profile.last_names %></li>
+            <li class="list-group-item">Rut: <%= @educator.profile.rut %></li>
+            <li class="list-group-item">Nacionalidad: <%= @educator.profile.nationality %></li>
+            <li class="list-group-item">Sexo: <%= @educator.profile.sex %></li>
+            <li class="list-group-item">Fecha de nacimiento: <%= @educator.profile.date_of_birth %></li>
+            <li class="list-group-item">Direccion: <%= @educator.profile.address %></li>
+            <li class="list-group-item">Telefono: <%= @educator.profile.phone %></li>
+        </ul>
+    <% end %>
+</div>
+<div>
+    <% if current_user.profile.type.description == 'director' %>
+        <button>Crear nueva educadora</button>
+    <% end %>
+    <button>Crear nuevo niño</button>
+</div>
+<div id=calendar>
+</div>
+<div>
+
+</div>

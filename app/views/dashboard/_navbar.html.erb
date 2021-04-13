@@ -1,0 +1,14 @@
+<nav style="background-color:#6155a6;"> 
+    <div class='container'  >
+        <%= image_tag('LOGO_NSDLV.png', size: '70x70') %>
+            <div>
+                <a href="" style=" color:#ffe6e6;">Inicio</a>
+                <a href="" style=" color:#ffe6e6;">Perfil</a>
+                <a href="" style=" color:#ffe6e6;">Niños</a>
+                <%# <% if current_user.profile.type == 'director' %>
+                    <%# <a href="">Educadoras</a> %>
+                <%# <% end %>
+                <%= link_to  "Cerrar sesión", destroy_authenticate_session_path, method: :delete %>
+            </div>
+    </div>
+</nav>
