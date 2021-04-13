@@ -4,7 +4,7 @@ one:
   rut: MyString
   names: MyString
   last_names: MyString
-  date_of_birth: MyString
+  date_of_birth: 2021-04-13
   nationality: MyString
   sex: 1
   address: MyString
@@ -15,7 +15,7 @@ two:
   rut: MyString
   names: MyString
   last_names: MyString
-  date_of_birth: MyString
+  date_of_birth: 2021-04-13
   nationality: MyString
   sex: 1
   address: MyString
