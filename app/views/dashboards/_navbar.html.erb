@@ -5,10 +5,10 @@
                 <a href="" style=" color:#ffe6e6;">Inicio</a>
                 <a href="" style=" color:#ffe6e6;">Perfil</a>
                 <a href="" style=" color:#ffe6e6;">Niños</a>
-                <%# <% if current_user.profile.type == 'director' %>
-                    <%# <a href="">Educadoras</a> %>
-                <%# <% end %>
-                <%= link_to  "Cerrar sesión", destroy_authenticate_session_path, method: :delete %>
+                <% if current_user.profile.type_profile == 'director' %>
+                    <a href="" style=" color:#ffe6e6;">Educadoras</a>
+                <% end %>
+                <%= link_to  "Cerrar sesión", destroy_user_session_path, method: :delete %>
             </div>
     </div>
 </nav>

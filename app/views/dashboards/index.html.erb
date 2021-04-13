@@ -1,0 +1,29 @@
+<%= render 'navbar' %>
+<%# jumbotron %>
+<div>
+    <img src="" alt="imagen de portada">
+    <div>temperatura</div>
+    <div>hora</div>
+</div>
+<%# perfil %>
+<div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre: <%= @user.profile.names %> <%= @user.profile.last_names %></li>
+            <li class="list-group-item">Rut: <%= @user.profile.rut %></li>
+            <li class="list-group-item">Nacionalidad: <%= @user.profile.nationality %></li>
+            <li class="list-group-item">Sexo: <%= @user.profile.sex %></li>
+            <li class="list-group-item">Fecha de nacimiento: <%= @user.profile.date_of_birth %></li>
+            <li class="list-group-item">Direccion: <%= @user.profile.address %></li>
+            <li class="list-group-item">Telefono: <%= @user.profile.phone %></li>
+        </ul>
+</div>
+<div>
+    <% if current_user.profile.type_profile == 'director' %>
+        <button>Crear nueva educadora</button>
+    <% end %>
+    <button>Crear nuevo niño</button>
+</div>
+<div id=calendar>
+</div>
+
+<%= render 'footer' %>

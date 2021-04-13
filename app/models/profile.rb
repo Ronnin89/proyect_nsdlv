@@ -4,4 +4,5 @@ class Profile < ApplicationRecord
     has_one :parent, dependent: :destroy
     has_one :child, dependent: :destroy
     has_one :educator, dependent: :destroy
+    belongs_to :user, optional: true
 end
