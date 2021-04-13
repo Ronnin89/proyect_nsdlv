@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id fundation:</strong>
+  <%= @child.id_fundation %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @child.grade %>
+</p>
+
+<p>
+  <strong>Phone secure:</strong>
+  <%= @child.phone_secure %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @child.entry %>
+</p>
+
+<p>
+  <strong>Egress:</strong>
+  <%= @child.egress %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @child.profile %>
+</p>
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>

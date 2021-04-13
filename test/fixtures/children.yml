@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_fundation: MyString
+  grade: MyString
+  phone_secure: MyString
+  entry: MyString
+  egress: MyString
+  profile: one
+
+two:
+  id_fundation: MyString
+  grade: MyString
+  phone_secure: MyString
+  entry: MyString
+  egress: MyString
+  profile: two

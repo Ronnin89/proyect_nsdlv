@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_educator: 1
+  profile: one
+
+two:
+  type_educator: 1
+  profile: two
