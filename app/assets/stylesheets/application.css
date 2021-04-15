@@ -12,5 +12,6 @@
  *
  *= require_tree .
  *= require bootstrap/dist/css/bootstrap.css
+ *= require @fortawesome/fontawesome-free/css/all.css
  *= require_self
  */

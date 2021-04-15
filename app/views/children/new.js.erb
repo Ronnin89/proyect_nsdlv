@@ -1,0 +1,93 @@
+$('#modal_new').empty();
+$('#modal_new').html(`
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crear un nuevo niñe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <%= form_with(model: @child, method: :new, local: true) do |form| %>
+                        <div class="field">
+                            <%= form.label 'Numero de la Fundacion' %>
+                            <%= form.text_field :id_fundation %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label 'Nivel' %>
+                            <%= form.text_field :grade %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label 'Telefono de seguridad' %>
+                            <%= form.text_field :phone_secure %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label 'Año de ingreso' %>
+                            <%= form.text_field :entry %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label 'Año de egreso' %>
+                            <%= form.text_field :egress %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :profile_id %>
+                            <%= form.text_field :profile_id %>
+                        </div>
+
+                        <%= form_with(model: @profile, method: :new, remote: true) do |form| %>
+                            <div class="field">
+                                <%= form.label 'Nombres' %>
+                                <%= form.text_field :names %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Apellidos' %>
+                                <%= form.text_field :last_names %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Fecha de nacimiento' %>
+                                <%= form.date_select :date_of_birth %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Nacionalidad' %>
+                                <%= form.text_field :nationality %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Sexo' %>
+                                <%= form.select :sex, Profile.sexes.keys.to_a %>
+
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Direccion' %>
+                                <%= form.text_field :address %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label 'Telefono' %>
+                                <%= form.text_field :phone %>
+                            </div>
+
+                        <% end %>       
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <%= form.submit "crear", class: "btn btn-primary", id: "new"%>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+           </div>
+                `);
+
+$('#myModal').modal()

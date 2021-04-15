@@ -40,9 +40,11 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: "Profile was successfully updated." }
         format.json { render :show, status: :ok, location: @profile }
+        format.js {}
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -64,6 +66,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:rut, :names, :last_names, :date_of_birth, :nationality, :sex, :address, :phone, :type_profile)
+      params.require(:profile).permit(:rut, :names, :last_names, :date_of_birth, :nationality, :sex, :address, :phone, :type_profile, :avatar)
     end
 end

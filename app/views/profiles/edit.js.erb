@@ -1,0 +1,61 @@
+$('#modal_edit').empty();
+$('#modal_edit').html(`
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edicion de Tarea</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <%= form_with(model: @profile, method: :patch, remote: true) do |form| %>
+                            <div class="field">
+                                <%= form.label :names %>
+                                <%= form.text_field :names %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :last_names %>
+                                <%= form.text_field :last_names %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :date_of_birth %>
+                                <%= form.date_select :date_of_birth %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :nationality %>
+                                <%= form.text_field :nationality %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :sex %>
+                                <%= form.select :sex, Profile.sexes.keys.to_a %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :address %>
+                                <%= form.text_field :address %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :phone %>
+                                <%= form.text_field :phone %>
+                            </div>
+                            <div class="field"> 
+                                <%= form.label 'avatar' %>
+                                <%= form.file_field :avatar%>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <%= form.submit "edit", class: "btn btn-primary", id: "edit"%>
+                            </div>
+                            <% end %>
+                    </div>
+                </div>
+                </div>`);
+
+$('#myModal').modal()

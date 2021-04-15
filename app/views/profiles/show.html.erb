@@ -1,49 +1,27 @@
+<%= render './dashboards/navbar' %>
 <p id="notice"><%= notice %></p>
+<div id="profile" class="container">
+  <div class="row">
+    <div class="col-sm-4"><%= image_tag(@profile.avatar.variant(resize: '350x350').processed, alt: 'imagen con problemas') if @profile.avatar.attached? %></div>
+    <div class="col-sm-8">
 
-<p>
-  <strong>Rut:</strong>
-  <%= @profile.rut %>
-</p>
-
-<p>
-  <strong>Names:</strong>
-  <%= @profile.names %>
-</p>
-
-<p>
-  <strong>Last names:</strong>
-  <%= @profile.last_names %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @profile.date_of_birth %>
-</p>
-
-<p>
-  <strong>Nationality:</strong>
-  <%= @profile.nationality %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @profile.sex %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @profile.phone %>
-</p>
-
-<p>
-  <strong>Type profile:</strong>
-  <%= @profile.type_profile %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Rut: </strong><%= @profile.rut %></li>
+        <li class="list-group-item"><strong>Nombre: </strong><%= @profile.names %> <%= @profile.last_names %></li>
+        <li class="list-group-item"><strong>Fecha de nacimiento:</strong><%= @profile.date_of_birth %></li>
+        <li class="list-group-item"><strong>Nacionalidad: </strong><%= @profile.nationality %></li>
+        <li class="list-group-item"><strong>Sexo: </strong><%= @profile.sex %></li>
+        <li class="list-group-item"><strong>Direccion: </strong><%= @profile.address %></li>
+        <li class="list-group-item"><strong>Telefono: </strong><%= @profile.phone %></li>
+        <li class="list-group-item"><strong>Tipo de perfil:</strong><%= @profile.type_profile %></li>
+        <% if @profile.educator %>
+          <li class="list-group-item"><strong>Cargo: </strong><%= @profile.educator.type_educator %></li>
+        <% end %>
+        <li class="list-group-item"><%= link_to 'Edit', edit_profile_path(@profile), remote: true %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="modal_edit">
+</div>
+<%= render './dashboards/footer' %>

@@ -1,0 +1,26 @@
+$('#profile').empty();
+
+$('#profile').html(`
+                        <div class="row">
+                            <div class="col-sm-4"><%= image_tag(@child.avatar.variant(resize: '200x100').processed, alt: 'imagen con problemas') if child.avatar.attached? %></div>
+                            <div class="col-sm-8">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Rut: </strong><%= @profile.rut %></li>
+                                <li class="list-group-item"><strong>Nombre: </strong><%= @profile.names %> <%= @profile.last_names %></li>
+                                <li class="list-group-item"><strong>Fecha de nacimiento:</strong><%= @profile.date_of_birth %></li>
+                                <li class="list-group-item"><strong>Nacionalidad: </strong><%= @profile.nationality %></li>
+                                <li class="list-group-item"><strong>Sexo: </strong><%= @profile.sex %></li>
+                                <li class="list-group-item"><strong>Direccion: </strong><%= @profile.address %></li>
+                                <li class="list-group-item"><strong>Telefono: </strong><%= @profile.phone %></li>
+                                <li class="list-group-item"><strong>Tipo de perfil:</strong><%= @profile.type_profile %></li>
+                                <% if @profile.educator %>
+                                <li class="list-group-item"><strong>Cargo: </strong><%= @profile.educator.type_educator %></li>
+                                <% end %>
+                                <li class="list-group-item"><%= link_to 'Edit', edit_profile_path(@profile), remote: true %></li>
+                            </ul>
+                            </div>
+                        </div>
+                        `);
+
+$('#modal_edit').empty()
+$('.modal-backdrop').remove()

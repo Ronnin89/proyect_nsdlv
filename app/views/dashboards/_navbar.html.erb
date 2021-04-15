@@ -1,14 +1,21 @@
 <nav style="background-color:#6155a6;"> 
     <div class='container'  >
-        <%= image_tag('LOGO_NSDLV.png', size: '70x70') %>
-            <div>
-                <a href="" style=" color:#ffe6e6;">Inicio</a>
-                <a href="" style=" color:#ffe6e6;">Perfil</a>
-                <a href="" style=" color:#ffe6e6;">Niños</a>
-                <% if current_user.profile.type_profile == 'director' %>
-                    <a href="" style=" color:#ffe6e6;">Educadoras</a>
-                <% end %>
-                <%= link_to  "Cerrar sesión", destroy_user_session_path, method: :delete %>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <%= image_tag('LOGO_NSDLV.png', size: '70x70') %>
             </div>
+            <div class="col">
+                <%= link_to "Inicio", dashboard_path, style: 'color:#ffe6e6;' %>
+                <%= link_to 'Mi Perfil', profile_path(current_user.profile.id), style: 'color:#ffe6e6;' %>
+                <%= link_to "Niñes", children_path, style: 'color:#ffe6e6;' %>
+                <% if current_user.profile.type_profile == 'director' %>
+                    <%= link_to "Educadoras", educators_path, style: 'color:#ffe6e6;' %>
+                <% end %>
+            </div>
+            <div class="col pl-5">
+                <%= link_to  raw('<i class="fas fa-sign-out-alt fa-3x" style="color:#ffe6e6;"></i>'), destroy_user_session_path, method: :delete %>
+            </div>
+        </div>
     </div>
 </nav>

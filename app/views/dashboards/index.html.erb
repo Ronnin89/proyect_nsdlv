@@ -17,13 +17,5 @@
             <li class="list-group-item">Telefono: <%= @user.profile.phone %></li>
         </ul>
 </div>
-<div>
-    <% if current_user.profile.type_profile == 'director' %>
-        <button>Crear nueva educadora</button>
-    <% end %>
-    <button>Crear nuevo niño</button>
-</div>
-<div id=calendar>
-</div>
 
 <%= render 'footer' %>

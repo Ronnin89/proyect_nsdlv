@@ -1,29 +1,40 @@
+<%= render './dashboards/navbar' %>
 <p id="notice"><%= notice %></p>
 
-<h1>Educators</h1>
+<div class='container'>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type educator</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <%= form_with(url: dashboard_educadoras_path, method: :get, remote: true) do |form| %>
 
-  <tbody>
-    <% @educators.each do |educator| %>
-      <tr>
-        <td><%= educator.type_educator %></td>
-        <td><%= educator.profile %></td>
-        <td><%= link_to 'Show', educator %></td>
-        <td><%= link_to 'Edit', edit_educator_path(educator) %></td>
-        <td><%= link_to 'Destroy', educator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= form.text_field :q %>
+        <%= form.submit 'Buscar por nombre o apellido' %>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <%= link_to 'New Educator', new_educator_path %>
 
-<%= link_to 'New Educator', new_educator_path %>
+    <div id='card_educators'>
+
+      <% @educators.each do |educator|%>
+              <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                      <div class="col-md-4">
+                      <img src="" alt="educadora">
+                      </div>
+                      <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title">Nombre: <%= educator.names %> <%= educator.last_names %></h5><hr>
+                          <p class="card-text">RUT: <%= educator.rut %></p><hr>
+                          <p class="card-text">Fecha de nacimiento: <%= educator.date_of_birth %></p><hr>
+                          <button type="button" class="btn btn-primary"><%= link_to 'Ver mas', educator %></button>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+      <% end%>
+
+    </div>
+
+</div>
+<%= render './dashboards/footer' %>
+
+

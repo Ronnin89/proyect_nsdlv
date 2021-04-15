@@ -1,0 +1,20 @@
+$('#profile').append(`
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                            <img src="<%= image_tag(url_for(child.avatar)) %>" alt="niñe">
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre: <%= child.names %> <%= child.last_names %></h5><hr>
+                                <p class="card-text">RUT: <%= child.rut %></p><hr>
+                                <p class="card-text">Fecha de nacimiento: <%= child.date_of_birth %></p><hr>
+                                <button type="button" class="btn btn-primary"><%= link_to 'Ver mas', child, remote: true %></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div> 
+                    `);
+
+$('#modal_new').empty()
+$('.modal-backdrop').remove()

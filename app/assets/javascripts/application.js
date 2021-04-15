@@ -17,4 +17,5 @@
 //= require bootstrap/dist/js/bootstrap.js
 //= require chartkick
 //= require Chart.bundle
+//= require @fortawesome/fontawesome-free/js/all.js
 //= require_tree .

@@ -3,7 +3,11 @@ class EducatorsController < ApplicationController
 
   # GET /educators or /educators.json
   def index
-    @educators = Educator.all
+    if(params[:q])
+      @educators = Profile.where('type_profile = ? AND names LIKE ? OR last_names LIKE ?', 1, "%#{params[:q]}%", "%#{params[:q]}%")
+    else
+      @educators = Profile.where(type_profile: 1)
+    end
   end
 
   # GET /educators/1 or /educators/1.json
