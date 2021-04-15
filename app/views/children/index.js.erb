@@ -1,7 +1,7 @@
 $('#card_childs').empty()
 
-<% @childs.each do |child|%>
     $('#card_childs').append(`
+<% @childs.each do |child|%>
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
@@ -17,5 +17,5 @@ $('#card_childs').empty()
                         </div>
                     </div>
                 </div>   
-                `)
 <% end%>
+                `)

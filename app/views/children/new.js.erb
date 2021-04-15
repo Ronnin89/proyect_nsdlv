@@ -80,7 +80,12 @@ $('#modal_new').html(`
                                 <%= formf.label 'Año de egreso' %>
                                 <%= formf.text_field :egress %>
                             </div>
-                        <% end %>       
+                        <% end %>   
+                        <div class="field"> 
+                            <%= form.label 'avatar' %>
+                            <%= form.file_field :avatar%>
+                        </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                             <%= form.submit "crear", class: "btn btn-primary", id: "new"%>

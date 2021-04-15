@@ -7,4 +7,7 @@ class Profile < ApplicationRecord
     belongs_to :user, optional: true
     has_one_attached :avatar
     accepts_nested_attributes_for :child
+
+    scope :child_request, -> { where(:type_profile => 2)}
+    # Ex:- scope :active, -> {where(:active => true)}
 end
