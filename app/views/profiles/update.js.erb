@@ -2,7 +2,7 @@ $('#profile').empty();
 
 $('#profile').html(`
                         <div class="row">
-                            <div class="col-sm-4"><%= image_tag(@child.avatar.variant(resize: '200x100').processed, alt: 'imagen con problemas') if child.avatar.attached? %></div>
+                            <div class="col-sm-4"><%= image_tag(@profile.avatar.variant(resize: '350x350').processed, alt: 'imagen con problemas') if @profile.avatar.attached? %></div>
                             <div class="col-sm-8">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Rut: </strong><%= @profile.rut %></li>

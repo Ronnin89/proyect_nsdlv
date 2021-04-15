@@ -16,8 +16,8 @@ class ChildrenController < ApplicationController
 
   # GET /children/new
   def new
-    @child = Child.new
     @profile = Profile.new
+    @profile.build_child
   end
 
   # GET /children/1/edit
@@ -71,6 +71,6 @@ class ChildrenController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def child_params
-      params.require(:child).permit(:id_fundation, :grade, :phone_secure, :entry, :egress, :profile_id, profile_attributes: [:rut, :names, :last_names, :date_of_birth, :nationality, :sex, :address, :phone, :type_profile])
+      params.require(:child).permit(:id_fundation, :grade, :phone_secure, :entry, :egress, :profile_id)
     end
 end

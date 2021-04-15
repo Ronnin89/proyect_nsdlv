@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token, only: [:new, :create]
 
   # GET /profiles or /profiles.json
   def index
@@ -27,9 +28,11 @@ class ProfilesController < ApplicationController
       if @profile.save
         format.html { redirect_to @profile, notice: "Profile was successfully created." }
         format.json { render :show, status: :created, location: @profile }
+        format.js {}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -66,6 +69,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:rut, :names, :last_names, :date_of_birth, :nationality, :sex, :address, :phone, :type_profile, :avatar)
+      params.require(:profile).permit(:rut, :names, :last_names, :date_of_birth, :nationality, :sex, :address, :phone, :type_profile, :avatar, child_attributes:[:id_fundation, :grade, :phone_secure, :entry, :egress, :profile_id] )
     end
 end

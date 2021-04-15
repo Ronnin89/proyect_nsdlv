@@ -1,8 +1,8 @@
-$('#profile').append(`
+$('#card_childs').append(`
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                            <img src="<%= image_tag(url_for(child.avatar)) %>" alt="niñe">
+                            <%= image_tag(child.avatar.variant(resize: '190x200').processed, alt: 'imagen con problemas') if child.avatar.attached? %>
                             </div>
                             <div class="col-md-8">
                             <div class="card-body">

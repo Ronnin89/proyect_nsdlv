@@ -11,74 +11,75 @@ $('#modal_new').html(`
                     </div>
                     <div class="modal-body">
 
-                        <%= form_with(model: @child, method: :new, local: true) do |form| %>
+                        <%= form_with(model: @profile, method: :new, local: true) do |form| %>
                         <div class="field">
-                            <%= form.label 'Numero de la Fundacion' %>
-                            <%= form.text_field :id_fundation %>
+                            <%= form.label 'Rut' %>
+                            <%= form.text_field :rut %>
+                        </div>
+                        
+                        <div class="field">
+                            <%= form.label 'Nombres' %>
+                            <%= form.text_field :names %>
                         </div>
 
                         <div class="field">
-                            <%= form.label 'Nivel' %>
-                            <%= form.text_field :grade %>
+                            <%= form.label 'Apellidos' %>
+                            <%= form.text_field :last_names %>
                         </div>
 
                         <div class="field">
-                            <%= form.label 'Telefono de seguridad' %>
-                            <%= form.text_field :phone_secure %>
+                            <%= form.label 'Fecha de nacimiento' %>
+                            <%= form.date_select :date_of_birth %>
                         </div>
 
                         <div class="field">
-                            <%= form.label 'Año de ingreso' %>
-                            <%= form.text_field :entry %>
+                            <%= form.label 'Nacionalidad' %>
+                            <%= form.text_field :nationality %>
                         </div>
 
                         <div class="field">
-                            <%= form.label 'Año de egreso' %>
-                            <%= form.text_field :egress %>
+                            <%= form.label 'Sexo' %>
+                            <%= form.select :sex, Profile.sexes.keys.to_a %>
+
                         </div>
 
                         <div class="field">
-                            <%= form.label :profile_id %>
-                            <%= form.text_field :profile_id %>
+                            <%= form.label 'Direccion' %>
+                            <%= form.text_field :address %>
                         </div>
 
-                        <%= form_with(model: @profile, method: :new, remote: true) do |form| %>
+                        <div class="field">
+                            <%= form.label 'Telefono' %>
+                            <%= form.text_field :phone %>
+                        </div>
+                            <%= form.hidden_field :type_profile, :value => 'nine' %>
+
+                        <%= form.fields_for :child do |formf| %>
+           
                             <div class="field">
-                                <%= form.label 'Nombres' %>
-                                <%= form.text_field :names %>
+                                <%= formf.label 'Numero de la Fundacion' %>
+                                <%= formf.text_field :id_fundation %>
                             </div>
 
                             <div class="field">
-                                <%= form.label 'Apellidos' %>
-                                <%= form.text_field :last_names %>
+                                <%= formf.label 'Nivel' %>
+                                <%= formf.text_field :grade %>
                             </div>
 
                             <div class="field">
-                                <%= form.label 'Fecha de nacimiento' %>
-                                <%= form.date_select :date_of_birth %>
+                                <%= formf.label 'Telefono de seguridad' %>
+                                <%= formf.text_field :phone_secure %>
                             </div>
 
                             <div class="field">
-                                <%= form.label 'Nacionalidad' %>
-                                <%= form.text_field :nationality %>
+                                <%= formf.label 'Año de ingreso' %>
+                                <%= formf.text_field :entry %>
                             </div>
 
                             <div class="field">
-                                <%= form.label 'Sexo' %>
-                                <%= form.select :sex, Profile.sexes.keys.to_a %>
-
+                                <%= formf.label 'Año de egreso' %>
+                                <%= formf.text_field :egress %>
                             </div>
-
-                            <div class="field">
-                                <%= form.label 'Direccion' %>
-                                <%= form.text_field :address %>
-                            </div>
-
-                            <div class="field">
-                                <%= form.label 'Telefono' %>
-                                <%= form.text_field :phone %>
-                            </div>
-
                         <% end %>       
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
