@@ -39,7 +39,13 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAIL_API'],
+    domain: 'sandbox496c5651181944af891f2975d4f3bc6c.mailgun.org',
+  }
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
