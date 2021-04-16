@@ -1,21 +1,40 @@
 <%= render 'navbar' %>
 <%# jumbotron %>
 <div>
-    <img src="" alt="imagen de portada">
-    <div>temperatura</div>
-    <div>hora</div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-light">Nuestra Señora de la Victoria</h1>
+            <p class="lead text-light">Bienvenid@ <%= @user.profile.names %> <%= @user.profile.last_names %></p>
+        </div>
+    </div>
+    <div class='container'>
+        <div class='row'>
+            <%# Profiles %>
+            <div class='col-sm-6 m-3 border rounded'>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Nombre: <%= @user.profile.names %> <%= @user.profile.last_names %></li>
+                        <li class="list-group-item">Rut: <%= @user.profile.rut %></li>
+                        <li class="list-group-item">Nacionalidad: <%= @user.profile.nationality %></li>
+                        <li class="list-group-item">Sexo: <%= @user.profile.sex %></li>
+                        <li class="list-group-item">Fecha de nacimiento: <%= @user.profile.date_of_birth %></li>
+                        <li class="list-group-item">Direccion: <%= @user.profile.address %></li>
+                        <li class="list-group-item">Telefono: <%= @user.profile.phone %></li>
+                    </ul>
+            </div>
+            <%# Bhirtdays %>
+            <div class='col-sm-5 m-3 border rounded'>
+            <h2><%= Date.today %></h2>
+            </div>
+        </div>
+        <%# Graphics %>
+        <div class='row'>
+            <div class='col-sm-5 m-3 border rounded'>
+            <p>grafico de niños el ultimo año</p>
+            </div>
+            <div class='col-sm-5 m-3 border rounded'>
+            <p>grafico de demografia por Sexo</p>
+            </div>
+        </div>
+    </div>
 </div>
-<%# perfil %>
-<div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Nombre: <%= @user.profile.names %> <%= @user.profile.last_names %></li>
-            <li class="list-group-item">Rut: <%= @user.profile.rut %></li>
-            <li class="list-group-item">Nacionalidad: <%= @user.profile.nationality %></li>
-            <li class="list-group-item">Sexo: <%= @user.profile.sex %></li>
-            <li class="list-group-item">Fecha de nacimiento: <%= @user.profile.date_of_birth %></li>
-            <li class="list-group-item">Direccion: <%= @user.profile.address %></li>
-            <li class="list-group-item">Telefono: <%= @user.profile.phone %></li>
-        </ul>
-</div>
-
 <%= render 'footer' %>

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# Mail for edit
+gem 'mailgun-ruby', '~>1.2.4'
 # Gem for graphics
 gem "chartkick"
 # Gem devise for authentication

@@ -4,9 +4,9 @@ class EducatorsController < ApplicationController
   # GET /educators or /educators.json
   def index
     if(params[:q])
-      @educators = Profile.where('type_profile = ? AND names LIKE ? OR last_names LIKE ?', 1, "%#{params[:q]}%", "%#{params[:q]}%")
+      @educators = Profile.educator_request.where('names LIKE ? OR last_names LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
     else
-      @educators = Profile.where(type_profile: 1)
+      @educators = Profile.educator_request
     end
   end
 
@@ -16,7 +16,8 @@ class EducatorsController < ApplicationController
 
   # GET /educators/new
   def new
-    @educator = Educator.new
+    @profile = Profile.new
+    @profile.build_educator
   end
 
   # GET /educators/1/edit

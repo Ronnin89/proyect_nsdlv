@@ -15,3 +15,21 @@
  *= require @fortawesome/fontawesome-free/css/all.css
  *= require_self
  */
+
+
+body {
+    background-color:#ffe6e6;
+}
+
+.jumbotron{
+    background: url("https://i.ibb.co/VTZSKXT/Whats-App-Image-2021-04-13-at-17-44-28-1.jpg") no-repeat center center; 
+    background-size: cover ;
+}
+
+footer {
+    background-color: #6155a6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #ffe6e6;
+  }

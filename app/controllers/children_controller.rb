@@ -4,9 +4,9 @@ class ChildrenController < ApplicationController
   # GET /children or /children.json
   def index
     if(params[:q])
-      @childs = Profile.child_request.where('names LIKE ? OR last_names LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%").order(:names)
+      @childs = Profile.child_request.where('names LIKE ? OR last_names LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
     else
-      @childs = Profile.child_request.order(:names)
+      @childs = Profile.child_request
     end
   end
 
