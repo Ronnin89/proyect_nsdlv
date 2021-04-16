@@ -21,15 +21,20 @@ body {
     background-color:#ffe6e6;
 }
 
-.jumbotron{
+#jumbotron_index{
     background: url("https://i.ibb.co/VTZSKXT/Whats-App-Image-2021-04-13-at-17-44-28-1.jpg") no-repeat center center; 
+    background-size: cover ;
+}
+#jumbotron_show{
+    background: url("https://i.ibb.co/HYKgw89/Whats-App-Image-2021-04-13-at-17-44-29-1.jpg") no-repeat center center; 
     background-size: cover ;
 }
 
 footer {
     background-color: #6155a6;
-    position: absolute;
+    position:fixed;
     bottom: 0;
     width: 100%;
+    height: 100px;
     color: #ffe6e6;
   }

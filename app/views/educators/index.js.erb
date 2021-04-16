@@ -5,7 +5,7 @@ $('#card_educators').empty()
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                        <img src="" alt="niñe">
+                        <%= image_tag(educator.avatar.variant(resize: '190x200').processed, alt: 'imagen con problemas') if educator.avatar.attached? %>
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">

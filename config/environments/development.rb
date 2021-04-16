@@ -33,13 +33,10 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :amazon
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :user_name => ENV['MAIL_USER'],
-    :password => ENV['MAIL_PASS']
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAIL_API'],
+    domain: 'sandbox496c5651181944af891f2975d4f3bc6c.mailgun.org',
   }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true

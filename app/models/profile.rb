@@ -9,8 +9,8 @@ class Profile < ApplicationRecord
     accepts_nested_attributes_for :child
     accepts_nested_attributes_for :educator
 
-    scope :child_request, -> { where(:type_profile => 2).order(:last_names)}
+    scope :child_request, -> { where(:type_profile => 2)}
     
-    scope :educator_request, -> { where(:type_profile => 1).order(:last_names)}
+    scope :educator_request, -> { where(:type_profile => 1)}
 
 end

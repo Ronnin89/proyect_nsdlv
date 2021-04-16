@@ -2,10 +2,10 @@
     <div class='container'  >
 
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col-2">
                 <%= image_tag('LOGO_NSDLV.png', size: '70x70') %>
             </div>
-            <div class="col">
+            <div class="col-8">
                 <%= link_to "Inicio", dashboard_path, style: 'color:#ffe6e6;' %>
                 <%= link_to 'Mi Perfil', profile_path(current_user.profile.id), style: 'color:#ffe6e6;' %>
                 <%= link_to "Niñes", children_path, style: 'color:#ffe6e6;' %>
@@ -13,7 +13,7 @@
                     <%= link_to "Educadoras", educators_path, style: 'color:#ffe6e6;' %>
                 <% end %>
             </div>
-            <div class="col pl-5">
+            <div class="col-2 navbar-collapse">
                 <%= link_to  raw('<i class="fas fa-sign-out-alt fa-3x" style="color:#ffe6e6;"></i>'), destroy_user_session_path, method: :delete %>
             </div>
         </div>

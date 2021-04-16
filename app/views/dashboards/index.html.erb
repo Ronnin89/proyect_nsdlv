@@ -1,7 +1,7 @@
 <%= render 'navbar' %>
 <%# jumbotron %>
 <div>
-    <div class="jumbotron jumbotron-fluid">
+    <div id="jumbotron_index" class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4 text-light">Nuestra Señora de la Victoria</h1>
             <p class="lead text-light">Bienvenid@ <%= @user.profile.names %> <%= @user.profile.last_names %></p>
@@ -29,10 +29,10 @@
         <%# Graphics %>
         <div class='row'>
             <div class='col-sm-5 m-3 border rounded'>
-            <p>grafico de niños el ultimo año</p>
+            <%= column_chart @bar_type_educator, title: "Tipos de Educadoras" %>
             </div>
             <div class='col-sm-5 m-3 border rounded'>
-            <p>grafico de demografia por Sexo</p>
+            <%= pie_chart @pie_sex, title: "Cantidad de niñes por sexo"%>
             </div>
         </div>
     </div>

@@ -1,4 +1,10 @@
 <%= render './dashboards/navbar' %>
+<div id="jumbotron_show" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-light">Nuestra Señora de la Victoria</h1>
+        <p class="lead text-light">Bienvenido a tu perfil</p>
+    </div>
+</div>
 <p id="notice"><%= notice %></p>
 <div id="profile" class="container">
   <div class="row">
@@ -13,9 +19,15 @@
         <li class="list-group-item"><strong>Sexo: </strong><%= @profile.sex %></li>
         <li class="list-group-item"><strong>Direccion: </strong><%= @profile.address %></li>
         <li class="list-group-item"><strong>Telefono: </strong><%= @profile.phone %></li>
-        <li class="list-group-item"><strong>Tipo de perfil:</strong><%= @profile.type_profile %></li>
-        <% if @profile.educator %>
+        <% if @profile.type_profile == 'educadora' %>
           <li class="list-group-item"><strong>Cargo: </strong><%= @profile.educator.type_educator %></li>
+        <% end %>
+        <% if @profile.type_profile == 'nine' %>
+          <li class="list-group-item"><strong>Id fundacion: </strong><%= @profile.child.id_fundation %></li>
+          <li class="list-group-item"><strong>Nivel: </strong><%= @profile.child.grade %></li>
+          <li class="list-group-item"><strong>Telefono de seguridad: </strong><%= @profile.child.phone_secure %></li>
+          <li class="list-group-item"><strong>Año de Entrada: </strong><%= @profile.child.entry %></li>
+          <li class="list-group-item"><strong>Año de Egreso: </strong><%= @profile.child.egress %></li>
         <% end %>
         <li class="list-group-item"><%= link_to 'Edit', edit_profile_path(@profile), remote: true %></li>
       </ul>

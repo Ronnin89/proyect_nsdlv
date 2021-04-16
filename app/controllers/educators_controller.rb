@@ -32,9 +32,11 @@ class EducatorsController < ApplicationController
       if @educator.save
         format.html { redirect_to @educator, notice: "Educator was successfully created." }
         format.json { render :show, status: :created, location: @educator }
+        format.js {}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @educator.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -45,9 +47,11 @@ class EducatorsController < ApplicationController
       if @educator.update(educator_params)
         format.html { redirect_to @educator, notice: "Educator was successfully updated." }
         format.json { render :show, status: :ok, location: @educator }
+        format.js {}
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @educator.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
