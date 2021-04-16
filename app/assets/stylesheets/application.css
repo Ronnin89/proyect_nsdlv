@@ -29,7 +29,14 @@ body {
     background: url("https://i.ibb.co/HYKgw89/Whats-App-Image-2021-04-13-at-17-44-29-1.jpg") no-repeat center center; 
     background-size: cover ;
 }
-
+#jumbotron_childs{
+    background: url("https://i.ibb.co/DLFs6VP/Whats-App-Image-2021-04-13-at-17-54-23.jpg") no-repeat center center; 
+    background-size: cover ;
+}
+#jumbotron_educators{
+    background: url("https://i.ibb.co/LkJRYFk/Whats-App-Image-2021-04-13-at-18-12-12-4.jpg") no-repeat center center; 
+    background-size: cover ;
+}
 footer {
     background-color: #6155a6;
     position:fixed;

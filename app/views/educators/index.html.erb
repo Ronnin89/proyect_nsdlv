@@ -1,17 +1,25 @@
 <%= render './dashboards/navbar' %>
-<p id="notice"><%= notice %></p>
-
+<div id="jumbotron_educators" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-light">Nuestras Educadoras</h1>
+        <br><br><br>
+    </div>
+</div>
 <div class='container'>
+<p id="notice"><%= notice %></p>
+        <div class="row">
+        <div class="col">
+            <%= link_to "<button>Nueva Educadora</button>".html_safe, new_educator_path, remote: true  %>
+        </div>
+        <div class="col">
+            <%= form_with(url: educators_path, method: :get, remote: true) do |form| %>
+                <%= form.text_field :q %>
+                <%= form.submit 'Buscar por nombre o apellido' %>
+            <% end %>
+        </div>  
+        </div>
 
-    <%= form_with(url: educators_path, method: :get, remote: true) do |form| %>
-
-        <%= form.text_field :q %>
-        <%= form.submit 'Buscar por nombre o apellido' %>
-
-    <% end %>
-
-    <%= link_to 'Nueva Educadora', new_educator_path, remote: true  %>
-
+<hr>
 
     <div id='card_educators'>
         <% @educators.each do |educator|%>
@@ -25,7 +33,7 @@
                             <h5 class="card-title">Nombre: <%= educator.names %> <%= educator.last_names %></h5><hr>
                             <p class="card-text">RUT: <%= educator.rut %></p><hr>
                             <p class="card-text">Fecha de nacimiento: <%= educator.date_of_birth %></p><hr>
-                            <button type="button" class="btn btn-primary"><%= link_to 'Ver mas', educator %></button>
+                            <%= link_to "<button>Mas información</button>".html_safe, educator %>
                         </div>
                         </div>
                     </div>

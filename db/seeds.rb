@@ -6,14 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Profile.destroy_all
+
+user = User.create(
+    email: 'ri.alvarez.89@hotmail.com',
+    password: 'test123456'
+)
+
 Profile.create(
     rut: '1234567-8',
-    names: 'nombre niño',
-    last_names: 'apellido niño',
-    date_of_birth: '09-04-2021',
+    names: 'Ricardo Emilio',
+    last_names: 'Alvarez Campos',
+    date_of_birth: '13-08-1989',
     nationality: 'chileno',
-    sex: 1,
-    address: 'cerca 123',
+    sex: 0,
+    address: 'mi casa',
     phone: '+5694546483',
-    type_profile: 2
+    type_profile: 0,
+    user_id: user.id
 )
+

@@ -12,7 +12,7 @@ $('#card_educators').empty()
                             <h5 class="card-title">Nombre: <%= educator.names %> <%= educator.last_names %></h5><hr>
                             <p class="card-text">RUT: <%= educator.rut %></p><hr>
                             <p class="card-text">Fecha de nacimiento: <%= educator.date_of_birth %></p><hr>
-                            <button type="button" class="btn btn-primary"><%= link_to 'Ver mas', educator, remote: true %></button>
+                            <%= link_to "<button>Mas información</button>".html_safe, educator, remote: true %>
                         </div>
                         </div>
                     </div>
