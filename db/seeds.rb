@@ -10,7 +10,7 @@ User.destroy_all
 Profile.destroy_all
 
 user = User.create(
-    email: 'ri.alvarez.89@hotmail.com',
+    email: 'test@mail.com',
     password: 'test123456'
 )
 

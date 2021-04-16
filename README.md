@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 5.2.4
 
-Things you may want to cover:
+* Dependencias a traves de yarn y gemfile
+    -yarn:
+        . bootstrap 
+        . jquery
+        . fontawesome for icons
 
-* Ruby version
+    -gemfile:
+        . devise for authentication
+        . chartkick for graphics
 
-* System dependencies
+* Database Postgresql
 
-* Configuration
+* Database: recuerda iniciar la seed para tener cuenta de administrador
+    user : 'test@mail.com'
+    pass : 'test123456'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Dominio 'nuestraseñoradelavictoria.cl'
