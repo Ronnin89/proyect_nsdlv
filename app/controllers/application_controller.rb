@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
 
-    @env = ENV['MAIL_API']
     def mail(id, date)
-        mg_client = Mailgun::Client.new(@env) 
+        mg_client = Mailgun::Client.new(ENV['MAIL_API']) 
 
         message_params = {
             from: 'nsdlv@mail.com',
